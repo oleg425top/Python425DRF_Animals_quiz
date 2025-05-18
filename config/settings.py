@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'redis',
 
     # user_apps
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -164,7 +165,7 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users.User'
 
 cache_status = os.getenv('CACHE_STATUS')
 CACHE_ENABLED = True if cache_status == 'True' else False
