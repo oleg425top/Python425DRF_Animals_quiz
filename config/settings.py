@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework_simplejwt',
     'corsheaders',
-    'drf-yasq',
+    # 'drf-yasg',
     'redis',
 
     # user_apps
