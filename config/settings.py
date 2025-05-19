@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework_simplejwt',
     'corsheaders',
-    # 'drf-yasg',
+    'drf_yasg',
     'redis',
 
     # user_apps
@@ -179,7 +179,7 @@ if CACHE_ENABLED:
     }
 
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ('django_filter.rest_framework.DjangoFilterBackend',),
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',),
     # 'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.IsAuthenticated',),
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
@@ -195,6 +195,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://read-and-write.example.com',
 ]
 
-CSRF_TRUST_ORIGINS = [
+CSRF_TRUSTED_ORIGINS = [
     'http://read-and-write.example.com',
 ]
