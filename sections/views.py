@@ -1,5 +1,5 @@
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from rest_framework.response import Response
 
 from sections.models import Section, Content
@@ -26,7 +26,7 @@ class SectionCreateAPIView(CreateAPIView):
 class SectionRetrieveAPIView(RetrieveAPIView):
     serializer_class = SectionSerializer
     queryset = Section.objects.all()
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
 
 class SectionUpdateAPIView(UpdateAPIView):
