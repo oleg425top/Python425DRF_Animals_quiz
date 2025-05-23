@@ -28,3 +28,19 @@ class Content(models.Model):
         verbose_name = _('Content')
         verbose_name_plural = _('Content')
         ordering = ['id']
+
+
+class Question(models.Model):
+    section = models.ForeignKey(Section, on_delete=models.CASCADE, verbose_name=_('Section'))
+    description = models.TextField(verbose_name=_('Description'))
+    question = models.TextField(verbose_name=_('Question'), **NULLABLE)
+    answer = models.CharField(max_length=40, verbose_name=_('Answer'))
+
+    def __str__(self):
+        return f'Вопрос по курсу {self.section.title}'
+
+    class Meta:
+        verbose_name = _('Question')
+        verbose_name_plural = _('Questions')
+        ordering = ['section']
+
