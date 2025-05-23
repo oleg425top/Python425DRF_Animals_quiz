@@ -33,6 +33,6 @@ urlpatterns = [
                   path(p.join(content), ContentListAPIView.as_view(), name='content_list'),
                   path(p.join(content, create), ContentCreateAPIView.as_view(), name='content_create'),
                   path(p.join(content, int_pk), ContentRetrieveAPIView.as_view(), name='content_detail'),
-                  path(p.join(content, int_pk), ContentUpdateAPIView.as_view(), name='content_update'),
-                  path(p.join(content, int_pk), ContentDestroyAPIView.as_view(), name='content_delete'),
+                  path(p.join(content, int_pk, update), ContentUpdateAPIView.as_view(), name='content_update'),
+                  path(p.join(content, int_pk, delete), ContentDestroyAPIView.as_view(), name='content_delete'),
               ] + router.urls
