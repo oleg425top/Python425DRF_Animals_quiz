@@ -15,7 +15,7 @@ class SectionContentSerializer(ModelSerializer):
         model = Content
         fields = ['id', 'title']
 
-class SectionContentListSerializer(ModelSerializer):
+class ContentListSerializer(ModelSerializer):
     section = SlugRelatedField(slug_field='title', queryset=Section.objects.all())
 
     class Meta:

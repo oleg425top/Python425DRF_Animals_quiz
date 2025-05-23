@@ -1,11 +1,13 @@
 from os import path as p
+from tkinter.font import names
 
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 
 from sections.apps import SectionsConfig
 from sections.views import SectionListAPIView, SectionCreateAPIView, SectionUpdateAPIView, SectionRetrieveAPIView, \
-    SectionDestroyAPIView
+    SectionDestroyAPIView, ContentListAPIView, ContentCreateAPIView, ContentUpdateAPIView, ContentDestroyAPIView, \
+    ContentRetrieveAPIView
 
 app_name = SectionsConfig.name
 
@@ -26,4 +28,11 @@ urlpatterns = [
                   path(p.join(section, int_pk), SectionRetrieveAPIView.as_view(), name='section_detail'),
                   path(p.join(section, int_pk, update), SectionUpdateAPIView.as_view(), name='section_update'),
                   path(p.join(section, int_pk, delete), SectionDestroyAPIView.as_view(), name='section_delete'),
+
+                  # content url_patterns
+                  path(p.join(content), ContentListAPIView.as_view(), name='content_list'),
+                  path(p.join(content, create), ContentCreateAPIView.as_view(), name='content_create'),
+                  path(p.join(content, int_pk), ContentRetrieveAPIView.as_view(), name='content_detail'),
+                  path(p.join(content, int_pk), ContentUpdateAPIView.as_view(), name='content_update'),
+                  path(p.join(content, int_pk), ContentDestroyAPIView.as_view(), name='content_delete'),
               ] + router.urls
