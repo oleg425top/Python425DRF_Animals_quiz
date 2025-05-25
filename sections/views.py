@@ -8,13 +8,13 @@ from sections.permissions import IsModerator, IsSuperUser
 from sections.serializers.content_serializer import ContentSerializer, ContentListSerializer
 from sections.serializers.question_serializer import QuestionSerializer, QuestionSectionSerializer
 from sections.serializers.section_serializer import SectionSerializer, SectionListSerializer
-from sections.urls import question
+# from sections.urls import question
 
 
 class SectionListAPIView(ListAPIView):
     serializer_class = SectionListSerializer
     queryset = Section.objects.all()
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     pagination_class = SectionPaginator
 
 
@@ -75,7 +75,7 @@ class ContentDestroyAPIView(DestroyAPIView):
 class QuestionListAPIView(ListAPIView):
     serializer_class = QuestionSerializer
     queryset = Question.objects.all()
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     pagination_class = QuestionPaginator
 
 

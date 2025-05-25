@@ -12,7 +12,7 @@ class Section(models.Model):
 
     class Meta:
         verbose_name = _('Section')
-        verbose_name_plural = _('Section')
+        verbose_name_plural = _('Sections')
         ordering = ['id', ]
 
 

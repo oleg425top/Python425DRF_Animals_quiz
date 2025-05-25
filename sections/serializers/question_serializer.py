@@ -4,14 +4,15 @@ from rest_framework.serializers import ModelSerializer
 from sections.models import Question, Section
 
 class QuestionSerializer(ModelSerializer):
-    question_section = SlugRelatedField(slug_field='title', queryset=Section.objects.all())
+    section = SlugRelatedField(slug_field='title', queryset=Section.objects.all())
 
     class Meta:
         model = Question
-        fields = ('id', 'question_section', 'question')
+        fields = ('id', 'section', 'question')
 
 class QuestionSectionSerializer(ModelSerializer):
-    question_section = SlugRelatedField(slug_field='title', queryset=Section.objects.all())
+    section = SlugRelatedField(slug_field='title', queryset=Section.objects.all())
 
     class Meta:
-        fields = ('id', 'question_section')
+        model = Question
+        fields = ('id', 'section')
