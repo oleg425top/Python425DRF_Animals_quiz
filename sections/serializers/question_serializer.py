@@ -15,4 +15,4 @@ class QuestionSectionSerializer(ModelSerializer):
 
     class Meta:
         model = Question
-        fields = ('id', 'section')
+        fields = ('id', 'section', 'answer')

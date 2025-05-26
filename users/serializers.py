@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from rest_framework_simplejwt.serializers import TokenObtainSerializer, AuthUser
+from rest_framework_simplejwt.serializers import TokenObtainSerializer, AuthUser, TokenObtainPairSerializer
 from rest_framework_simplejwt.tokens import Token
 
 from users.models import User
@@ -36,7 +36,7 @@ class UserUpdateSerializer(serializers.ModelSerializer):
             PasswordValidator(field='password'),
         ]
 
-class UserTokenObtainPainSerializer(TokenObtainSerializer):
+class UserTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
