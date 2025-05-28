@@ -54,7 +54,7 @@ class SectionTestCase(APITestCase):
 
     def test_11_content_list(self):
         responce = self.client.get(f'/content/')
-        print(responce.json())
+        # print(responce.json())
         self.assertEqual(responce.status_code, status.HTTP_200_OK)
         self.assertEqual(responce.json()['results'][0]['id'], 6)
 
