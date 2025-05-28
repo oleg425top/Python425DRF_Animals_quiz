@@ -4,10 +4,12 @@ from rest_framework.fields import SerializerMethodField
 from sections.models import Section, Content
 from sections.serializers.content_serializer import SectionContentSerializer
 
+
 class SectionSerializer(ModelSerializer):
     class Meta:
         model = Section
         fields = '__all__'
+
 
 class SectionListSerializer(ModelSerializer):
     section_content_title = SerializerMethodField()

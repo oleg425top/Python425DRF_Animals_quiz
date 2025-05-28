@@ -9,6 +9,7 @@ class SectionAdmin(admin.ModelAdmin):
     ordering = ('id',)
     search_fields = ('title',)
 
+
 @admin.register(Content)
 class ContentAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'section')

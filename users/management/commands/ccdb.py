@@ -2,6 +2,7 @@ from django.core.management import BaseCommand
 import pyodbc
 from config.settings import DATABASE, USER, PASSWORD, HOST, DRIVER, PAD_DATABASE
 
+
 class Command(BaseCommand):
     def handle(self, *args, **options):
         ConnectionString = f'''

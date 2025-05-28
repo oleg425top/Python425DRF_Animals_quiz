@@ -3,8 +3,8 @@ from rest_framework_simplejwt.views import TokenRefreshView
 from django.views.decorators.cache import never_cache
 
 from users.apps import UsersConfig
-from users.serializers import UserCreateSerializer
-from users.views import UserListAPIView, UserCreateAPIView, UserUpdateAPIView, UserDestroyAPIView, UserRetrieveAPIView, UserTokenObtainPairView
+from users.views import UserListAPIView, UserCreateAPIView, UserUpdateAPIView, UserDestroyAPIView, UserRetrieveAPIView, \
+    UserTokenObtainPairView
 
 app_name = UsersConfig.name
 
@@ -15,7 +15,7 @@ urlpatterns = [
     path('<int:pk>/update/', never_cache(UserUpdateAPIView.as_view()), name='user_update'),
     path('<int:pk>/delete/', never_cache(UserDestroyAPIView.as_view()), name='user_delete'),
 
-    #token urlpatterns
+    # token urlpatterns
     path('token/', UserTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 

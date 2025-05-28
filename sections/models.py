@@ -43,4 +43,3 @@ class Question(models.Model):
         verbose_name = _('Question')
         verbose_name_plural = _('Questions')
         ordering = ['section']
-

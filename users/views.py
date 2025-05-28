@@ -10,7 +10,7 @@ from users.serializers import UserSerializer, UserCreateSerializer, UserUpdateSe
 class UserListAPIView(ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = (IsAuthenticated, IsSuperUser|IsModerator)
+    permission_classes = (IsAuthenticated, IsSuperUser | IsModerator)
 
 
 class UserCreateAPIView(CreateAPIView):
@@ -22,7 +22,7 @@ class UserCreateAPIView(CreateAPIView):
 class UserRetrieveAPIView(RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated,)
 
 
 class UserUpdateAPIView(UpdateAPIView):
@@ -42,4 +42,4 @@ class UserDestroyAPIView(DestroyAPIView):
 
 class UserTokenObtainPairView(TokenObtainPairView):
     serializer_class = UserTokenObtainPairSerializer
-    permission_classes = (AllowAny, )
+    permission_classes = (AllowAny,)

@@ -50,7 +50,7 @@ class SectionTestCase(APITestCase):
         self.assertEqual(responce.status_code, status.HTTP_404_NOT_FOUND)
 
     def test_05_section_list(self):
-        responce = self.client.get(f'/section/')
+        responce = self.client.get('/section/')
         self.assertEqual(responce.status_code, status.HTTP_200_OK)
         self.assertEqual(responce.json()['results'][0]['title'], 'Test Section')
 
