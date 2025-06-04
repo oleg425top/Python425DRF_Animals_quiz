@@ -86,7 +86,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Database
+# Default_Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 # DATABASES = {
@@ -95,6 +95,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+# Local Database MSSQLExpress
+
 USER = os.getenv('MS_SQL_USER')
 PASSWORD = os.getenv('MS_SQL_KEY')
 HOST = os.getenv('MS_SQL_SERVER')
@@ -117,7 +120,23 @@ DATABASES = {
             }
     }
 }
-
+#
+# POSTGRES_USER_DOCKER = os.getenv('POSTGRESQL_USER')
+# POSTGRES_DATABASE_DOCKER = os.getenv('POSTGRES_DATABASE_DOCKER')
+# POSTGRESSQL_PORT_DOCKER = os.getenv('POSTGRESSQL_PORT_DOCKER')
+# POSTGRESQL_HOST_DOCKER = os.getenv('POSTGRESQL_HOST_DOCKER')
+# POSTGRESQL_PASSWORD_DOCKER = os.getenv('POSTGRESQL_PASSWORD_DOCKER')
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': POSTGRES_DATABASE_DOCKER,
+#         'USER': POSTGRES_USER_DOCKER,
+#         'PORT': POSTGRESSQL_PORT_DOCKER,
+#         'PASSWORD': POSTGRESQL_PASSWORD_DOCKER,
+#         'HOST': POSTGRESQL_HOST_DOCKER,
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
