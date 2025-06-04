@@ -98,45 +98,45 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Local Database MSSQLExpress
 
-USER = os.getenv('MS_SQL_USER')
-PASSWORD = os.getenv('MS_SQL_KEY')
-HOST = os.getenv('MS_SQL_SERVER')
-DATABASE = os.getenv('MS_SQL_DATABASE')
-# БАза данных для создания другой
-PAD_DATABASE = os.getenv('MS_PAD_DATABASE')
-DRIVER = os.getenv('MS_SQL_DRIVER')
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'mssql',
-        'NAME': DATABASE,
-        'USER': USER,
-        'PASSWORD': PASSWORD,
-        'HOST': HOST,
-        'PORT': '',
-        'OPTIONS':
-            {
-                'driver': DRIVER
-            }
-    }
-}
-#
-# POSTGRES_USER_DOCKER = os.getenv('POSTGRESQL_USER')
-# POSTGRES_DATABASE_DOCKER = os.getenv('POSTGRES_DATABASE_DOCKER')
-# POSTGRESSQL_PORT_DOCKER = os.getenv('POSTGRESSQL_PORT_DOCKER')
-# POSTGRESQL_HOST_DOCKER = os.getenv('POSTGRESQL_HOST_DOCKER')
-# POSTGRESQL_PASSWORD_DOCKER = os.getenv('POSTGRESQL_PASSWORD_DOCKER')
+# USER = os.getenv('MS_SQL_USER')
+# PASSWORD = os.getenv('MS_SQL_KEY')
+# HOST = os.getenv('MS_SQL_SERVER')
+# DATABASE = os.getenv('MS_SQL_DATABASE')
+# # БАза данных для создания другой
+# PAD_DATABASE = os.getenv('MS_PAD_DATABASE')
+# DRIVER = os.getenv('MS_SQL_DRIVER')
 #
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': POSTGRES_DATABASE_DOCKER,
-#         'USER': POSTGRES_USER_DOCKER,
-#         'PORT': POSTGRESSQL_PORT_DOCKER,
-#         'PASSWORD': POSTGRESQL_PASSWORD_DOCKER,
-#         'HOST': POSTGRESQL_HOST_DOCKER,
+#         'ENGINE': 'mssql',
+#         'NAME': DATABASE,
+#         'USER': USER,
+#         'PASSWORD': PASSWORD,
+#         'HOST': HOST,
+#         'PORT': '',
+#         'OPTIONS':
+#             {
+#                 'driver': DRIVER
+#             }
 #     }
 # }
+#
+POSTGRES_USER_DOCKER = os.getenv('POSTGRESQL_USER')
+POSTGRES_DATABASE_DOCKER = os.getenv('POSTGRES_DATABASE_DOCKER')
+POSTGRESSQL_PORT_DOCKER = os.getenv('POSTGRESSQL_PORT_DOCKER')
+POSTGRESQL_HOST_DOCKER = os.getenv('POSTGRESQL_HOST_DOCKER')
+POSTGRESQL_PASSWORD_DOCKER = os.getenv('POSTGRESQL_PASSWORD_DOCKER')
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': POSTGRES_DATABASE_DOCKER,
+        'USER': POSTGRES_USER_DOCKER,
+        'PORT': POSTGRESSQL_PORT_DOCKER,
+        'PASSWORD': POSTGRESQL_PASSWORD_DOCKER,
+        'HOST': POSTGRESQL_HOST_DOCKER,
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
